@@ -16,32 +16,27 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public Iterable<Contact> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return contactRepository.findAll();
 	}
 
 	@Override
 	public List<Contact> search(String q) {
-		// TODO Auto-generated method stub
-		return null;
+		return contactRepository.findByNameContaining(q);
 	}
 
 	@Override
 	public Contact findOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return contactRepository.findOne(id);
 	}
 
 	@Override
 	public void save(Contact contact) {
-		// TODO Auto-generated method stub
-
+		contactRepository.save(contact);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-
+		contactRepository.delete(id);
 	}
 
 }

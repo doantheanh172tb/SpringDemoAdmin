@@ -40,10 +40,8 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Phone</th>
-							<td><a th:href="@{/contact/{id}/edit(id=${contact.id})}"><span
-									class="glyphicon glyphicon-pencil"></span></a></td>
-							<td><a th:href="@{/contact/{id}/delete(id=${contact.id})}"><span
-									class="glyphicon glyphicon-trash"></span></a></td>
+							<th>Edit</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -52,8 +50,10 @@
 							<td th:text="${contact.name}"></td>
 							<td th:text="${contact.email}"></td>
 							<td th:text="${contact.phone}"></td>
-							<td><a href="#"><span class="glyphicon glyphicon-pencil"></span></a></td>
-							<td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+							<td><a th:href="@{/contact/{id}/edit(id=${contact.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/contact/{id}/delete(id=${contact.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
 						</tr>
 					</tbody>
 				</table>
