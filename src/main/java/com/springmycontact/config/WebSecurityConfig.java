@@ -38,10 +38,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/contact/create", 
 						"/contact/save", 
 						"/contact/**/edit",
-						"/contact/**/delete",
 						"/contact/search"
 						).hasRole("MEMBER")
 				.antMatchers(
+						"/contact/**/delete"
 						).hasRole("ADMIN")
 				.and()
 			.formLogin()
