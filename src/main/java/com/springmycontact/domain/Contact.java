@@ -1,4 +1,4 @@
-package com.doantheanh.springmycontact.domain;
+package com.springmycontact.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

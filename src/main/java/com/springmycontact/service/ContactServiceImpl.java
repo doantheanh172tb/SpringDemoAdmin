@@ -1,12 +1,12 @@
-package com.doantheanh.springmycontact.service;
+package com.springmycontact.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.doantheanh.springmycontact.domain.Contact;
-import com.doantheanh.springmycontact.repository.ContactRepository;
+import com.springmycontact.domain.Contact;
+import com.springmycontact.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements ContactService {

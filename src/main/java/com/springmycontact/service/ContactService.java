@@ -1,8 +1,8 @@
-package com.doantheanh.springmycontact.service;
+package com.springmycontact.service;
 
 import java.util.List;
 
-import com.doantheanh.springmycontact.domain.Contact;
+import com.springmycontact.domain.Contact;
 
 public interface ContactService {
 

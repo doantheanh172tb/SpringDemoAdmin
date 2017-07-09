@@ -1,10 +1,10 @@
-package com.doantheanh.springmycontact.repository;
+package com.springmycontact.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.doantheanh.springmycontact.domain.Contact;
+import com.springmycontact.domain.Contact;
 
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
 

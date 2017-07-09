@@ -1,4 +1,4 @@
-package com.doantheanh.springmycontact.controller;
+package com.springmycontact.controller;
 
 import javax.validation.Valid;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.doantheanh.springmycontact.domain.Contact;
-import com.doantheanh.springmycontact.service.ContactService;
+import com.springmycontact.domain.Contact;
+import com.springmycontact.service.ContactService;
 
 @Controller
 public class ContactController {
