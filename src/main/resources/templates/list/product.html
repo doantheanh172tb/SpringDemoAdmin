@@ -5,27 +5,10 @@
 	<nav th:replace="layout :: header"></nav>
 
 	<div class="container main-content list">
-		<div th:if="${success}"
-			class="row alert alert-success alert-dismissible">
-			<button type="button" class="close" data-dismiss="alert"
-				aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-			<span th:text="${success}"></span>
-		</div>
-		<div class="row">
-			<a th:href="@{/product/create}" class="btn btn-success pull-left">
-				<span class="glyphicon glyphicon-plus"></span> Add new product
-			</a>
-			<form class="form-inline pull-right" action="#"
-				th:action="@{/product/search}" method="GET">
-				<div class="form-group">
-					<input type="text" class="form-control" name="q"
-						placeholder="Type product name..." />
-				</div>
-				<button type="submit" class="btn btn-primary">Search</button>
-			</form>
-		</div>
+
+		<div th:replace="layout :: menuTopList(controller='product')"></div>
+
+		<div th:replace="layout :: alertMessage"></div>
 
 		<th:block th:if="${#lists.isEmpty(products)}">
 			<h3>No products</h3>
