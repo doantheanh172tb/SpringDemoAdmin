@@ -32,19 +32,19 @@ public class ContactController {
 //        logger.warn("Warn message");
 //        logger.error("Error message");
 		model.addAttribute("contacts", contactService.findAll());
-		return "list";
+		return "list/contact";
 	}
 
 	@GetMapping("/contact/create")
 	public String create(Model model) {
 		model.addAttribute("contact", new Contact());
-		return "form";
+		return "form/contact";
 	}
 
 	@PostMapping("/contact/save")
 	public String save(@Valid Contact contact, BindingResult result, RedirectAttributes redirect) {
 		if (result.hasErrors()) {
-			return "form";
+			return "form/contact";
 		}
 		contactService.save(contact);
 		redirect.addFlashAttribute("success", "Saved contact successfully!");
@@ -54,7 +54,7 @@ public class ContactController {
 	@GetMapping("/contact/{id}/edit")
 	public String edit(@PathVariable int id, Model model) {
 		model.addAttribute("contact", contactService.findOne(id));
-		return "form";
+		return "form/contact";
 	}
 
 	@GetMapping("/contact/{id}/delete")
@@ -71,7 +71,7 @@ public class ContactController {
 		}
 
 		model.addAttribute("contacts", contactService.search(q));
-		return "list";
+		return "list/contact";
 	}
 
 }
