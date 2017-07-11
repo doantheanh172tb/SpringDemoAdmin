@@ -12,7 +12,7 @@ public interface ProductService {
 
 	Product findOne(int id);
 
-	void save(Product contact);
+	void save(Product product);
 
 	void delete(int id);
 

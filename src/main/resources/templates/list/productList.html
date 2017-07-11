@@ -14,6 +14,8 @@
 			<h3>No products</h3>
 		</th:block>
 
+		<input type="hidden" id="entityName" value="product" />
+
 		<th:block th:unless="${#lists.isEmpty(products)}">
 			<div class="row">
 				<table class="table table-bordered table-hover">
@@ -28,13 +30,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="contact,iterStat : ${products}">
+						<tr th:each="product,iterStat : ${products}">
 							<td th:text="${iterStat.count}"></td>
-							<td th:text="${contact.name}"></td>
-							<td th:text="${contact.image}"></td>
-							<td th:text="${contact.content}"></td>
-							<td>Edit</td>
-							<td>Delete</td>
+							<td th:text="${product.name}"></td>
+							<td th:text="${product.image}"></td>
+							<td th:text="${product.content}"></td>
+							<td><a><span data-toggle="modal"
+									th:attr="data-productId=${product.id }"
+									data-target="#formModal"
+									class="editButton glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/product/{id}/delete(id=${product.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
 						</tr>
 					</tbody>
 				</table>

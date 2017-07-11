@@ -1,0 +1,24 @@
+<div class="container main-content form">
+	<div class="row">
+		<form action="#" th:action="@{/product/save}" th:object="${product}"
+			method="POST" novalidate="novalidate">
+			<input type="hidden" th:field="*{id}" />
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Product Name"
+					th:field="*{name}" th:errorclass="field-error" /> <em
+					th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></em>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Image"
+					th:field="*{image}" th:errorclass="field-error" /> <em
+					th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></em>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Content"
+					th:field="*{content}" />
+			</div>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</div>
+<!-- /.container -->

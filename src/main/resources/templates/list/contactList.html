@@ -14,6 +14,8 @@
 			<h3>No contacts</h3>
 		</th:block>
 
+		<input type="hidden" id="entityName" value="contact" />
+
 		<th:block th:unless="${#lists.isEmpty(contacts)}">
 			<div class="row">
 				<table class="table table-bordered table-hover">
@@ -33,8 +35,10 @@
 							<td th:text="${contact.name}"></td>
 							<td th:text="${contact.email}"></td>
 							<td th:text="${contact.phone}"></td>
-							<td><a th:href="@{/contact/{id}/edit(id=${contact.id})}"><span
-									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a><span data-toggle="modal"
+									th:attr="data-contactId=${contact.id }"
+									data-target="#formModal"
+									class="editButton glyphicon glyphicon-pencil"></span></a></td>
 							<td><a th:href="@{/contact/{id}/delete(id=${contact.id})}"><span
 									class="glyphicon glyphicon-trash"></span></a></td>
 						</tr>
